@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: webtechprojekt
+    env: java
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/webtechprojekt-1.0-SNAPSHOT.jar"
