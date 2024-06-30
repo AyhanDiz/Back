@@ -1,40 +1,59 @@
 package htwberlin.webtech.web;
 
-import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Beitrag {
-    String Titel;
-    Date Release;
-    String Genre;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String date;
+    private String imgSrc;
 
-    public Beitrag(String titel, Date release, String genre) {
-        this.Titel = titel;
-        this.Release = release;
-        this.Genre = genre;
+    public Beitrag() {
     }
 
-    public String getTitel() {
-        return Titel;
+    public Beitrag(String title, String date, String imgSrc) {
+        this.title = title;
+        this.date = date;
+        this.imgSrc = imgSrc;
     }
 
-    public void setTitel(String titel) {
-        Titel = titel;
+    // Getter und Setter Methoden
+    public Long getId() {
+        return id;
     }
 
-    public Date getRelease() {
-        return Release;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setRelease(Date release) {
-        Release = release;
+    public String getTitle() {
+        return title;
     }
 
-    public String getGenre() {
-        return Genre;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setGenre(String genre) {
-        Genre = genre;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getImgSrc() {
+        return imgSrc;
+    }
+
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
     }
 }
